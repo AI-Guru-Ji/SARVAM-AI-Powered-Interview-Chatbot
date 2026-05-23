@@ -1,0 +1,36 @@
+{
+  "candidate": "jaideep",
+  "role": "electrician",
+  "language": "hi-IN",
+  "date": "2026-05-20T13:33:04.515427",
+  "questions": [
+    "आप किसी इलेक्ट्रिकल फॉल्ट को पहचानने के लिए क्या प्रक्रिया अपनाते हैं?",
+    "AC और DC करंट में क्या फ़र्क है? घर में कौन सा उपयोग होता है?",
+    "आप लाइव वायर पर काम करते वक्त कौन सी सुरक्षा सावधानियाँ लेते हैं?",
+    "MCB और फ्यूज़ में क्या अंतर है?",
+    "अगर किसी घर की मेन सप्लाई बंद हो जाए, तो आप क्या करेंगे?"
+  ],
+  "answers": [
+    "मैं देखता हूँ कि कहाँ कहाँ पे दिक्कत है।",
+    "घर में एसी उपयोग होता है और एसी और डीसी में फ़र्क यह है कि एसी पावर से चलता है और डीसी बैटरी से चलता है।",
+    "मैं ज़्यादा सावधानियाँ नहीं लेता हूँ, मैं बेफिक तरीक़े से काम करता हूँ।",
+    "एमसीबी और फ्यूज में अंतर यह है कि सर नहीं पता मुझे।",
+    "मैं बिजली विभाग को कॉल करूँगा और उनसे बोलूँगा कि आके ठीक करो।"
+  ],
+  "evaluation": {
+    "overall_score": 2,
+    "communication": 7,
+    "domain_knowledge": 1,
+    "confidence": 3,
+    "summary": "The candidate demonstrates a severe lack of technical knowledge and safety awareness required for an electrician. They are unable to explain basic concepts like MCBs or fault-finding and admit to working on live wires carelessly. This indicates they are not capable of performing the job safely or independently.",
+    "hire_recommendation": false,
+    "strengths": [
+      "Basic awareness of common household electrical components.",
+      "Honest about not knowing certain technical details."
+    ],
+    "improvements": [
+      "Immediate and mandatory safety training is required.",
+      "Fundamental technical knowledge needs to be built from the ground up."
+    ]
+  }
+}

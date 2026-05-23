@@ -1,0 +1,56 @@
+=== TRANSCRIPT SENT TO LLM ===
+Q1 (contact_info): क्या आप मुझे अपना पूरा नाम, मोबाइल नंबर और ईमेल आईडी बता सकते हैं?
+A1: मेरा पूरा नाम देव कुमार आनंद है। मेरा मोबाइल नंबर एट सेवन नाइन फाइव डबल एट फोर वन वन टू और ईमेल आईडी देव आनंद वन टू वन थ्री एट द रेट जीमेल डॉट कॉम।
+Q2 (location_and_age): आपकी उम्र क्या है, और आप अभी किस शहर या कस्बे में रहते हैं?
+A2: सर मैं इना को आए हूँ।
+Q3 (languages): आप कौन-कौन सी भाषाएँ आराम से बोल सकते हैं?
+A3: मैं आराम से हिंदी और थोड़ा बहुत अंग्रेजी बोल सकता हूँ।
+Q4 (family): अपने परिवार के बारे में थोड़ा बताइए — क्या आप शादीशुदा हैं, और क्या कोई आप पर निर्भर है?
+A4: मेरे परिवार में कुल 9 सदस्य हैं। हाँ, मैं शादीशुदा हूँ। मेरी एक पत्नी है, दो बच्चे हैं, एक माता-पिता हैं और दो भाई हैं।
+Q5 (experience_years): आपको Housekeeping से जुड़े काम का कितने साल का अनुभव है?
+A5: 5 साल।
+Q6 (experience): आपने पहले कहाँ काम किया है? कृपया अपने पिछले नियोक्ता या कार्य-स्थल के नाम और लगभग कितने समय तक काम किया, यह बताइए।
+A6: मैंने वेदांता ग्रुप में 5 साल तक काम किया।
+Q7 (education): आपकी शैक्षणिक पृष्ठभूमि क्या है — जैसे 10वीं पास, 12वीं, आईटीआई डिप्लोमा, या कोई और योग्यता?
+A7: मैंने बारहवीं लखनऊ से किया है और आईटीआई लखनऊ यूनिवर्सिटी से किया है।
+Q8 (salary): आप कितनी मासिक तनख्वाह की उम्मीद रखते हैं, और अगर पहले काम किया है तो वहाँ कितनी तनख्वाह मिलती थी?
+A8: मुझे पचास हज़ार मासिक तनख्वाह की उम्मीद है, पहले मुझे चालीस हज़ार मिलता था।
+Q9 (availability): आप काम कब से शुरू कर सकते हैं, और अगर ज़रूरत पड़े तो क्या आप किसी दूसरे शहर जाने को तैयार हैं?
+A9: मैं काम अगले हफ़्ते से शुरू कर सकता हूँ और किसी भी शहर जाने के लिए तैयार हूँ।
+
+=== RAW LLM RESUME ===
+CANDIDATE NAME & CONTACT
+Dev Anand
+Phone: [To be filled]
+Email: [To be filled]
+
+PROFESSIONAL SUMMARY
+Detail-oriented professional with 5 years of experience in housekeeping. Possesses an ITI diploma and a 12th-grade education, ensuring a strong understanding of hygiene and safety protocols. A quick learner, proficient in Hindi and English, and available for immediate relocation.
+
+WORK EXPERIENCE
+Housekeeping Staff
+Vedanta Group
+5 years
+- Maintained cleanliness and hygiene in assigned areas.
+- Performed daily cleaning, dusting, and sanitization tasks.
+- Managed laundry and ironing duties.
+- Ensured compliance with safety and security standards.
+
+EDUCATION & CERTIFICATIONS
+12th Grade
+Lucknow
+ITI Diploma
+Lucknow University
+
+CORE SKILLS & TOOLS
+- Housekeeping and Cleaning
+- Organizational Skills
+- Time Management
+- Safety and Security Protocols
+- Basic Laundry Management
+- Hindi (Fluent)
+- English (Conversational)
+
+LANGUAGES KNOWN
+Hindi
+English

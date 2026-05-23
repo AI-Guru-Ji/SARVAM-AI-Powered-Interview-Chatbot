@@ -1,0 +1,67 @@
+=== INPUT TRANSCRIPT (original language) ===
+Q: आप कहाँ रहते हैं और आपकी उम्र क्या है?
+A: मैं गोरखपुर का रहने वाला हूँ, उम्र 35 साल।
+Q: कौन-कौन सी भाषाएँ बोलते हैं?
+A: हिंदी और थोड़ी अंग्रेज़ी।
+Q: परिवार के बारे में बताइए।
+A: शादीशुदा हूँ, पत्नी और एक बेटा है।
+Q: शिक्षा?
+A: 10वीं पास, गोरखपुर के सरकारी स्कूल से।
+Q: पिछला काम?
+A: एक होटल में 4 साल हाउसकीपिंग का काम किया।
+Q: अपेक्षित वेतन?
+A: चौदह हज़ार महीना, पिछली नौकरी में दस हज़ार मिलते थे।
+Q: कब शुरू कर सकते हैं?
+A: अगले हफ्ते से, दूसरे शहर भी जा सकता हूँ।
+
+=== ENGLISH TRANSCRIPT (post step-1) ===
+Q: आप कहाँ रहते हैं और आपकी उम्र क्या है?
+A: मैं गोरखपुर का रहने वाला हूँ, उम्र 35 साल।
+Q: कौन-कौन सी भाषाएँ बोलते हैं?
+A: हिंदी और थोड़ी अंग्रेज़ी।
+Q: परिवार के बारे में बताइए।
+A: शादीशुदा हूँ, पत्नी और एक बेटा है।
+Q: शिक्षा?
+A: 10वीं पास, गोरखपुर के सरकारी स्कूल से।
+Q: पिछला काम?
+A: एक होटल में 4 साल हाउसकीपिंग का काम किया।
+Q: अपेक्षित वेतन?
+A: चौदह हज़ार महीना, पिछली नौकरी में दस हज़ार मिलते थे।
+Q: कब शुरू कर सकते हैं?
+A: अगले हफ्ते से, दूसरे शहर भी जा सकता हूँ।
+
+=== RAW LLM RESPONSE (step-2 JSON extraction) ===
+(no response — call failed)
+
+=== PARSED PROFILE ===
+{
+  "personal": {
+    "name": "Kamlesh",
+    "age": null,
+    "location": null,
+    "languages_spoken": []
+  },
+  "family": {
+    "marital_status": null,
+    "dependents": null
+  },
+  "education": {
+    "highest_qualification": null,
+    "institution": null
+  },
+  "experience": {
+    "total_years": null,
+    "last_role": null,
+    "last_employer": null,
+    "summary": null
+  },
+  "skills": [],
+  "expectations": {
+    "expected_salary_inr_monthly": null,
+    "last_salary_inr_monthly": null,
+    "availability": null,
+    "willing_to_relocate": null
+  },
+  "applied_role": "housekeeping",
+  "language": "hi"
+}

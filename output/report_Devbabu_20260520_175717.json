@@ -1,0 +1,40 @@
+{
+  "candidate": "Devbabu",
+  "role": "electrician",
+  "language": "en-IN",
+  "date": "2026-05-20T17:57:17.141989",
+  "questions": [
+    "What process do you follow to diagnose an electrical fault?",
+    "Can you walk me through a specific example of a fault you diagnosed and how you found it?",
+    "Could you give me an example of a fault you diagnosed and how you found it?",
+    "What is the difference between AC and DC current? Which is used in homes?",
+    "What safety precautions do you take when working on live wires?",
+    "What is the difference between an MCB and a fuse?",
+    "If the main supply of a house trips, what steps would you take?"
+  ],
+  "answers": [
+    "Hmm",
+    "Hello",
+    "No answer provided.",
+    "Sorry, I told you.",
+    "Sorry, I don't know.",
+    "Sorry",
+    "Sorry, I don't know."
+  ],
+  "evaluation": {
+    "overall_score": 1,
+    "communication": 1,
+    "domain_knowledge": 1,
+    "confidence": 1,
+    "summary": "The candidate demonstrates a significant lack of knowledge and confidence. Their responses are consistently non-committal, defensive, and show little understanding of fundamental electrical concepts required for an electrician role.",
+    "hire_recommendation": false,
+    "strengths": [
+      "Willingness to admit when they do not know an answer",
+      "Honesty about their current knowledge gaps"
+    ],
+    "improvements": [
+      "Gain foundational knowledge of basic electrical theory and terminology",
+      "Practice answering common technical questions with confidence and clarity"
+    ]
+  }
+}

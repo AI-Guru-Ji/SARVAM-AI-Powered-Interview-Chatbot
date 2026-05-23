@@ -1,0 +1,50 @@
+=== TRANSCRIPT SENT TO LLM ===
+Q1 (contact_info): क्या आप मुझे अपना पूरा नाम, मोबाइल नंबर और ईमेल आईडी बता सकते हैं?
+A1: मेरा नाम है विजय सिंह राणा, मेरा मोबाइल नंबर है 8795884112 और ईमेल आईडी है शिवम@gmail.com।
+Q2 (location_and_age): आपकी उम्र क्या है, और आप अभी किस शहर या कस्बे में रहते हैं?
+A2: मेरी उम्र बत्तीस वर्ष है, मैं लखनऊ शहर में रहता हूँ।
+Q3 (languages): आप कौन-कौन सी भाषाएँ आराम से बोल सकते हैं?
+A3: मैं हिंदी और अंग्रेजी आराम से बोल सकता हूँ।
+Q4 (family): अपने परिवार के बारे में थोड़ा बताइए — क्या आप शादीशुदा हैं, और क्या कोई आप पर निर्भर है?
+A4: मेरे परिवार में कुल 8 सदस्य हैं, माता पिता पत्नी, एक पुत्र एक पुत्री और दो छोटे भाई और मैं शादीशुदा हूँ और सब मेरे से लेकर।
+Q5 (experience_years): आपको Security Guard से जुड़े काम का कितने साल का अनुभव है?
+A5: मुझे सिक्योरिटी गार्ड से जुड़े काम का नौ साल का उत्तर है।
+Q6 (experience): आपने पहले कहाँ काम किया है? कृपया अपने पिछले नियोक्ता या कार्य-स्थल के नाम और लगभग कितने समय तक काम किया, यह बताइए।
+A6: मैंने श्री ज्वेलरी ग्रुप्स में एज़ अ सिक्योरिटी सुपरवाइज़र काम किया है और वहाँ मैंने 8 साल काम किया है।
+Q7 (education): आपकी शैक्षणिक पृष्ठभूमि क्या है — जैसे 10वीं पास, 12वीं, आईटीआई डिप्लोमा, या कोई और योग्यता?
+A7: मेरे पास बारहवीं के बाद मैंने इलेक्ट्रिशियन डिपार्टमेंट में डिप्लोमा किया है लखनऊ यूनिवर्सिटी से, उसके बाद मैंने बीए ऑनर्स अलाहाबाद यूनिवर्सिटी से कंप्लीट किया।
+Q8 (skills): आप किन विशेष टूल्स, उपकरणों या तकनीकों के साथ सबसे ज़्यादा सहज हैं? आपने अपने काम में जो भी इस्तेमाल किया है, बेझिझक बताइए।
+A8: मैं बंदूक चलाने में काफ़ी माहिर हूँ।
+Q9 (salary): आप कितनी मासिक तनख्वाह की उम्मीद रखते हैं, और अगर पहले काम किया है तो वहाँ कितनी तनख्वाह मिलती थी?
+A9: मुझे पहले पैंतालीस हज़ार रुपये महीने मिलते थे, अभी मुझे साठ हज़ार मासिक रुपये की उम्मीद है।
+Q10 (availability): आप काम कब से शुरू कर सकते हैं, और अगर ज़रूरत पड़े तो क्या आप किसी दूसरे शहर जाने को तैयार हैं?
+A10: मैं काम अगले हफ़्ते से शुरू कर सकता हूँ और मैं किसी भी दूसरे शहर जाने के लिए बिल्कुल तैयार हूँ।
+
+=== RAW LLM RESUME ===
+Vijay Rana
+Phone: [To be filled]
+Email: [To be filled]
+
+Professional Summary
+Vijay Rana is a dedicated Security professional with nine years of comprehensive experience in the field.
+Proven track record as a Security Supervisor, specializing in maintaining security and safety protocols.
+Highly skilled and capable of handling complex security situations with professionalism.
+
+Work Experience
+Security Supervisor
+Mr. Jewellery Groups
+- Served as a Security Supervisor for 8 years.
+
+Education & Certifications
+Diploma in Electrical Engineering
+- Lucknow University
+Bachelor of Arts (Honors)
+- Allahabad University
+
+Core Skills & Tools
+- Skilled in handling firearms
+- Knowledge of security protocols
+
+Languages Known
+Hindi
+English

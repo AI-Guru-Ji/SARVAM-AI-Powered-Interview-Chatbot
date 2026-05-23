@@ -1,0 +1,37 @@
+{
+  "personal": {
+    "name": "Mokesh",
+    "age": 32,
+    "location": "Lucknow",
+    "languages_spoken": [
+      "Hindi",
+      "English"
+    ]
+  },
+  "family": {
+    "marital_status": "married",
+    "dependents": "wife, son, daughter"
+  },
+  "education": {
+    "highest_qualification": "Diploma in Electrician",
+    "institution": "Lucknow"
+  },
+  "experience": {
+    "total_years": 2,
+    "last_role": "Electrician",
+    "last_employer": "Electric shop",
+    "summary": "Worked at an electric shop for 2 years, wiring customers' homes and selling electric goods when the shop was closed."
+  },
+  "skills": [
+    "wiring",
+    "selling_electric_goods"
+  ],
+  "expectations": {
+    "expected_salary_inr_monthly": 30000,
+    "last_salary_inr_monthly": 21000,
+    "availability": "from tomorrow",
+    "willing_to_relocate": true
+  },
+  "applied_role": "electrician",
+  "language": "hi"
+}

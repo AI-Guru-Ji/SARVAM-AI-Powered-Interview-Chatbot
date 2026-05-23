@@ -1,0 +1,44 @@
+=== TRANSCRIPT SENT TO LLM ===
+Q1 (location_and_age): आप कहाँ रहते हैं और आपकी उम्र क्या है?
+A1: मैं गोरखपुर का रहने वाला हूँ, उम्र 35 साल।
+Q2 (languages): कौन-कौन सी भाषाएँ बोलते हैं?
+A2: हिंदी और थोड़ी अंग्रेज़ी।
+Q3 (family): परिवार के बारे में बताइए।
+A3: शादीशुदा हूँ, पत्नी और एक बेटा है।
+Q4 (education): शिक्षा?
+A4: 10वीं पास, गोरखपुर के सरकारी स्कूल से।
+Q5 (experience): पिछला काम?
+A5: एक होटल में 4 साल हाउसकीपिंग का काम किया।
+Q6 (salary): अपेक्षित वेतन?
+A6: चौदह हज़ार महीना, पिछली नौकरी में दस हज़ार मिलते थे।
+Q7 (availability): कब शुरू कर सकते हैं?
+A7: अगले हफ्ते से, दूसरे शहर भी जा सकता हूँ।
+
+=== RAW LLM RESUME ===
+Kamlesh
+Phone: [To be filled]
+Email: [To be filled]
+
+Professional Summary
+Detail-oriented housekeeping professional with 4 years of experience in a hotel setting. Seeking to apply skills in a new role. Highly motivated and available for immediate start.
+
+Work Experience
+Housekeeper
+Hotel
+Gorakhpur
+4 Years
+- Maintained cleanliness and hygiene standards in hotel rooms and public areas.
+- Managed housekeeping operations, including linen and inventory management.
+- Ensured guest satisfaction by upholding hotel service standards.
+- Collaborated with the front-desk team to coordinate room readiness.
+
+Education & Certifications
+10th Pass
+Government School, Gorakhpur
+
+Core Skills & Tools
+Housekeeping Operations, Cleaning Protocols, Linen Management, Attention to Detail, Time Management, Team Collaboration
+Cleaning Equipment, Inventory Management Systems, Communication Devices
+
+Languages Known
+Hindi, English

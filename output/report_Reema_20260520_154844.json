@@ -1,0 +1,44 @@
+{
+  "candidate": "Reema",
+  "role": "electrician",
+  "language": "hi-IN",
+  "date": "2026-05-20T15:48:44.768179",
+  "questions": [
+    "आप किसी इलेक्ट्रिकल फॉल्ट को पहचानने के लिए क्या प्रक्रिया अपनाते हैं?",
+    "आपने कौन सी डिवाइस का उपयोग करके फॉल्ट की जाँच करते हैं? मुझे बताइए कि आप पहली कौन सी चीज़ करते हैं?",
+    "AC और DC करंट में क्या फ़र्क है? घर में कौन सा उपयोग होता है?",
+    "आप लाइव वायर पर काम करते वक्त कौन सी सुरक्षा सावधानियाँ लेते हैं?",
+    "क्या आप सवाल समझ पाए? सुरक्षा के बारे में क्या जानना चाहते हैं?",
+    "MCB और फ्यूज़ में क्या अंतर है?",
+    "अगर किसी घर की मेन सप्लाई बंद हो जाए, तो आप क्या करेंगे?",
+    "पहले घर की मुख्य स्विच चेक करते हैं, फिर क्या करते हैं?",
+    "फोन किससे लगाते हैं, और क्या जानकारी लेते हैं?"
+  ],
+  "answers": [
+    "इलेक्ट्रिकल फॉल्ट को पहचानने के लिए हम उसको अपनी डिवाइस से चेक करते हैं कि किसी तरीके की अर्थिंग या उसमें कोई फॉल्ट तो नहीं आ रहा है।",
+    "मैं जो डिवाइस यूज़ करता हूँ वो अमेरिकन मेड है और उस डिवाइस का नाम है हुलुलुलु।",
+    "नहीं पता है।",
+    "हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी हाँ जी",
+    "No answer provided.",
+    "एमसीबी और फ्यूज़ में यह अंतर है कि एमसीबी से पूरे घर की लाइट चली जाती है अगर आप उसे निकाल लो और फ्यूज़ से एक लोकेशन की जाती है",
+    "मैं तुरंत बिजली घर को कॉल करूँगा और बोलूँगा कि आके ठीक करो।",
+    "फिर फोन लगाते हैं।",
+    "नहीं पता।"
+  ],
+  "evaluation": {
+    "overall_score": 4,
+    "communication": 2,
+    "domain_knowledge": 3,
+    "confidence": 2,
+    "summary": "The candidate is minimally qualified for an electrician role, showing limited technical knowledge and communication skills. While they demonstrate some willingness to answer questions, they frequently admit ignorance and provide minimal responses.",
+    "hire_recommendation": false,
+    "strengths": [
+      "Willingness to attempt answers even when uncertain",
+      "Basic understanding of some electrical concepts (MCB vs fuse)"
+    ],
+    "improvements": [
+      "Improve technical knowledge of electrical systems",
+      "Enhance communication skills and confidence"
+    ]
+  }
+}
