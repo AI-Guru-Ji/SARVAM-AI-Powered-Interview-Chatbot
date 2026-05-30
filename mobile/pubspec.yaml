@@ -1,0 +1,65 @@
+name: shramsaathi
+description: ShramSaathi AI — Android candidate app for voice-first interviews.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+  flutter: '>=3.24.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # HTTP client
+  dio: ^5.7.0
+
+  # Audio
+  # NOTE: record 5.x had a Linux sub-plugin version mismatch with
+  # record_platform_interface that broke Android compile too (Dart
+  # analyser checks all platforms). Pinned to ^6.0 to get matching
+  # transitive versions. AudioRecorder API is unchanged across 5→6.
+  record: ^6.0.0
+  audioplayers: ^6.1.0      # WAV playback from the backend
+  permission_handler: ^11.3.1
+
+  # Persistence (auth token + recruiter email)
+  shared_preferences: ^2.3.2
+
+  # Path helpers
+  path_provider: ^2.1.4
+
+  # Open downloaded files (PDF scorecard) with the system viewer.
+  open_filex: ^4.5.0
+
+  # Native share sheet (WhatsApp / Email / etc.) for the report URL.
+  share_plus: ^10.0.0
+
+  # Navigation
+  go_router: ^14.2.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+  # One-shot icon generator — `flutter pub run flutter_launcher_icons`
+  flutter_launcher_icons: ^0.14.1
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/logo.png"
+  # White rounded background — works well against any wallpaper.
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/logo.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/

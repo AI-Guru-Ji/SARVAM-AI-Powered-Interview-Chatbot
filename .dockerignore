@@ -1,0 +1,22 @@
+# Don't ship local secrets / cruft into the Docker image.
+venv/
+.venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.git/
+.gitignore
+mobile/                     # Flutter app — not needed on the backend
+output/                     # Per-deploy state lives on Render's disk
+**/output/
+**/build/
+**/.dart_tool/
+**/.idea/
+**/*.iml
+.vscode/
+.idea/
+*.log
+*.md                        # docs are read on GitHub, not in the container
+!ui/fastapi/README.md       # ...except the backend README

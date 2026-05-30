@@ -1,0 +1,33 @@
+# render.yaml — Render.com Blueprint for the ShramSaathi AI backend.
+#
+# Render reads this file when you click "New Blueprint" from a GitHub
+# repo. It will create a single web service from the Dockerfile in the
+# repo root, set up the env vars below, and expose the public URL.
+#
+# After deploy: Render shows the service URL like
+#   https://shramsaathi-backend.onrender.com
+# Use that as the BACKEND_URL when building the signed Android APK:
+#   flutter build apk --release \
+#       --dart-define=BACKEND_URL=https://shramsaathi-backend.onrender.com
+#
+# Free-tier service "sleeps" after 15 minutes of no traffic and takes
+# ~30-60s to cold-start. Acceptable for stakeholder testing; upgrade
+# to "Starter" ($7/mo) once you go to production.
+
+services:
+  - type: web
+    name: shramsaathi-backend
+    env: docker
+    plan: free
+    region: singapore        # Closest free region to India for low latency
+    healthCheckPath: /v1/health
+    autoDeploy: true         # Re-deploy on every push to main
+    envVars:
+      - key: SARVAM_API_KEY
+        sync: false          # Set in Render dashboard (private)
+      - key: DEMO_MODE
+        value: "1"           # Bypass real OTP for stakeholder testing
+      - key: LOG_LEVEL
+        value: INFO
+      - key: PYTHONUNBUFFERED
+        value: "1"

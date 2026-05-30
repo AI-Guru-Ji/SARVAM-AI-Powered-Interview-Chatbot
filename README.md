@@ -1,122 +1,196 @@
-# 🎙 Blue Collar AI Interview Bot
-**Powered by Sarvam AI — Built for India**
+# श्रमसाथी AI
 
-An AI-powered voice interview bot for hiring blue-collar workers (housekeeping, electrician, plumber, security guard) with support for **Hindi and English**.
-
----
-
-## Features
-- 🎤 Voice-to-voice interview (speak questions, listen to answers)
-- 🗣️ Hindi + English support (auto-detects language)
-- 🧠 LLM-based evaluation with scores for communication, domain knowledge, confidence
-- 📊 JSON score report saved for every candidate
-- 🔌 Roles: Housekeeping, Electrician, Plumber, Security Guard
+> Voice-first hiring for India's blue-collar workforce.
+> Built on Sarvam AI · 6 Indian languages · ATS-ready output.
 
 ---
 
-## Tech Stack
+## What it does
 
-| Component     | Sarvam API                          | Model         |
-|--------------|-------------------------------------|---------------|
-| Speech → Text | `/speech-to-text`                  | `saaras:v3`   |
-| LLM Logic     | `/v1/chat/completions`             | `sarvam-2b-v0.5` |
-| Text → Speech | `/text-to-speech`                  | `bulbul:v3`   |
+A web app that runs an end-to-end voice interview for blue-collar roles
+(housekeeping, electrician, plumber, security guard). Candidates speak in
+their own language. Recruiters get a structured English scorecard.
+
+Three steps:
+
+1. **Onboarding** — 9 voice questions in the candidate's language capture
+   contact, age, education, experience, salary, availability.
+2. **Resume** — an ATS-ready English PDF is auto-generated from the conversation.
+3. **Interview** — 5 role-specific voice questions with dynamic follow-ups,
+   ending in a scored recruiter report.
+
+**Languages:** English · Hindi · Bengali · Telugu · Punjabi · Gujarati
+**Roles:** Housekeeping · Electrician · Plumber · Security Guard
 
 ---
 
-## Setup
+## Why it exists
 
-### Step 1 — Install dependencies
+Most blue-collar candidates in India have limited literacy and don't speak
+English. Most HR / ATS systems expect typed English input. श्रमसाथी AI
+bridges the gap — candidates speak naturally in their own language, and
+the recruiter receives clean structured data they can act on.
+
+---
+
+## Run it
+
+### 1. Setup
+
 ```bash
-# On Ubuntu/Debian first:
-sudo apt-get install portaudio19-dev python3-dev ffmpeg
-
-# Then install Python packages:
+cd interview_bot
+python -m venv venv && source venv/bin/activate     # Windows: venv\Scripts\activate
 pip install -r requirements.txt
+cp .env.example .env                                 # paste your Sarvam key
 ```
 
-### Step 2 — Set your API key
-```bash
-cp .env.example .env
-# Edit .env and add your Sarvam API key:
-# SARVAM_API_KEY=your_key_here
-```
-Get your key from: https://dashboard.sarvam.ai
+Get a Sarvam key at <https://dashboard.sarvam.ai>.
 
-### Step 3 — Test the APIs
-```bash
-python test_apis.py
-```
-This verifies TTS, LLM, and evaluation work before starting interviews.
+### 2. One-time: bake the welcome audio
 
-### Step 4 — Run the interview bot
 ```bash
-python interview_bot.py
+python tools/regenerate_welcome.py
 ```
+Re-run only when you change `SETUP_WELCOME_TEXT` in
+[data/interview_questions.py](data/interview_questions.py).
+
+### 3. Launch
+
+```bash
+streamlit run ui/streamlit/app.py
+```
+
+Opens at <http://localhost:8501>.
+
+### 4. (Optional) Pre-demo health check
+
+```bash
+python main.py --health-check
+```
+
+Probes Sarvam TTS + LLM with tiny payloads.
 
 ---
 
-## Project Structure
+## Configuration
+
+| Variable | Required | Default | Notes |
+|---|---|---|---|
+| `SARVAM_API_KEY` | ✅ | — | Sarvam subscription key |
+| `SARVAM_BASE_URL` |  | `https://api.sarvam.ai` | Sandbox override |
+| `LOG_LEVEL` |  | `INFO` | `DEBUG` / `INFO` / `WARNING` / `ERROR` |
+| `OUTPUT_DIR` |  | `<project>/output` | Where resumes, reports, debug snapshots go |
+
+---
+
+## Architecture
+
+A **UI-agnostic core** + a **swappable presentation layer**. Drop in
+`ui/<your-stack>/` to replace Streamlit; the rest never changes.
+
 ```
 interview_bot/
-├── interview_bot.py        ← Main entrypoint
-├── test_apis.py            ← API connectivity test
-├── requirements.txt
-├── .env.example            ← Copy to .env
-├── data/
-│   └── question_bank.py    ← Questions in Hindi + English
-├── utils/
-│   ├── sarvam_api.py       ← STT / TTS / LLM wrappers
-│   └── audio_utils.py      ← Microphone recording + playback
-└── output/
-    ├── temp/               ← Temporary audio files
-    └── report_*.json       ← Candidate score reports
+├── main.py                       # CLI entry (--health-check)
+├── config/settings.py            # pydantic-settings, .env-driven
+├── constants/app_constants.py    # all URLs, model names, magic numbers, colours
+├── data/                         # translated questions & messages
+├── models/schemas.py             # Pydantic v2 I/O types
+├── prompts/                      # every LLM prompt extracted
+├── services/                     # ★ UI-agnostic business logic
+│   ├── sarvam_{stt,tts,llm}_service.py
+│   ├── profile_service.py        # deterministic profile builder (no LLM)
+│   ├── resume_service.py         # LLM resume + PDF, deterministic fallback
+│   ├── evaluation_service.py     # scorecard, with retry + JSON recovery
+│   ├── decide_next_turn_service.py
+│   └── health_check_service.py
+├── utils/                        # logger, exceptions, helpers, pdf_renderer
+├── ui/streamlit/                 # ★ presentation layer (replaceable)
+│   ├── app.py                    # FSM dispatcher
+│   ├── state.py, styles.py, components.py
+│   └── views/                    # one file per stage
+├── tests/                        # mocked unit tests
+├── assets/                       # logo, welcome.wav
+├── tools/                        # one-shot regeneration scripts
+└── output/                       # generated artefacts (gitignored)
 ```
+
+**Layer rules** (enforced by import discipline):
+
+- `services/` never imports from `ui/`.
+- `ui/streamlit/` imports services, models, data — but no other UI.
+- A new `ui/fastapi/` or `ui/cli/` slots in without touching business logic.
+
+**Stage machine** (Streamlit FSM):
+
+```
+setup → profile_intro → profile → profile_building → profile_review
+      → greeting → interview → closing → evaluating → report
+```
+
+### Reliability features (battle-scars)
+
+- **Auto-retry on LLM token-budget failures** — evaluation retries in
+  English (~3× more token-efficient) when Hindi/Devanagari output busts
+  the 4096-token cap.
+- **Partial-JSON regex recovery** — scores + summary survive when the
+  LLM truncates mid-JSON.
+- **Deterministic profile builder** — zero LLM calls; profile is built
+  from a fixed question → field mapping.
+- **Pre-baked welcome audio** — `assets/welcome.wav` ships with the
+  repo; demo opens with zero Sarvam latency.
+- **Click-to-begin overlay** — satisfies browser autoplay policy so
+  voice always plays on the first interaction.
+- **Two-bucket state model** — `reset_interview()` clears one
+  candidate's data without wiping the welcome-unlock flag or TTS cache,
+  so back-to-back interviews don't replay the intro or leak history.
+- **Graceful retry UI** — failed evaluations show a "Retry Evaluation"
+  screen, never a Python traceback.
 
 ---
 
-## How It Works
+## Tests
 
+```bash
+pytest                # all unit tests, mocked, no API key needed
+pytest -k recovery    # filter by name
+pytest -v             # verbose
 ```
-Candidate speaks  →  [Saaras v3 STT]  →  Transcript text
-                                               ↓
-Question text     →  [Bulbul v3 TTS]  ←  [Sarvam-2B LLM]
-                                               ↓
-                    After all Q&A  →  Score Report (JSON)
-```
+
+47 tests · ~0.4s · `tests/conftest.py` mocks Sarvam via `unittest.mock`.
 
 ---
 
-## Sample Score Report (output JSON)
-```json
-{
-  "candidate": "Ramesh Kumar",
-  "role": "electrician",
-  "language": "hi-IN",
-  "evaluation": {
-    "overall_score": 7,
-    "communication": 6,
-    "domain_knowledge": 8,
-    "confidence": 7,
-    "summary": "Ramesh showed solid technical knowledge about MCBs and safety. Communication was clear.",
-    "hire_recommendation": true,
-    "strengths": ["Strong safety awareness", "Practical experience"],
-    "improvements": ["Could improve Hindi fluency"]
-  }
-}
-```
+## Extending
+
+| Want to… | Where to change it |
+|---|---|
+| Add a role | `data/interview_questions.py` → `QUESTION_BANK` (one entry × 6 languages) |
+| Add a language | `data/interview_questions.py` (`LANGUAGES`, plus every translated dict) |
+| Change an LLM prompt | `prompts/<feature>_prompt.py` — never inline in services |
+| Tune a constant (URL, timeout, model name, colour) | `constants/app_constants.py` |
+| Change the welcome text | Edit `SETUP_WELCOME_TEXT`, then re-run `python tools/regenerate_welcome.py` |
+| Add an LLM service | `services/<feature>_service.py` — accept `Settings` in `__init__`, raise custom exceptions from `utils/exceptions.py` |
+| Swap Streamlit for FastAPI / React | Add `ui/<your-stack>/`. Call the same services. Done. |
 
 ---
 
-## Extending the Bot
+## Tech stack
 
-- **Add a new role**: Add an entry to `data/question_bank.py`
-- **Change voice**: Edit `speaker` in `utils/sarvam_api.py` (options: meera, pavithra, arvind, amol)
-- **Add more languages**: Change `language_code` to `ta-IN`, `te-IN`, `bn-IN`, etc.
-- **Web UI**: Wrap with Flask/FastAPI and use the Sarvam WebSocket streaming API for real-time
+| Layer | Tech |
+|---|---|
+| Web UI | Streamlit + `audio_recorder_streamlit` |
+| STT | Sarvam **Saaras v3** |
+| TTS | Sarvam **Bulbul v3** |
+| LLM | Sarvam **sarvam-30b** (reasoning, `effort=low`) |
+| PDF | `fpdf2` (pure Python) |
+| Config | `pydantic-settings` |
+| Tests | `pytest` + `unittest.mock` |
 
 ---
 
-## Sarvam AI Supported Languages
-`hi-IN` Hindi · `en-IN` English · `ta-IN` Tamil · `te-IN` Telugu · `bn-IN` Bengali  
-`mr-IN` Marathi · `gu-IN` Gujarati · `kn-IN` Kannada · `ml-IN` Malayalam · and more
+## License
+
+Built on top of Sarvam AI's Indic-language voice + LLM stack. Designed
+for Indian blue-collar hiring: spoken interviews in native languages,
+candidates with limited literacy, HR systems that expect English ATS
+output.

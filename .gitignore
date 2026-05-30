@@ -1,0 +1,34 @@
+# ── Secrets ────────────────────────────────────────────────────────
+.env
+
+# ── Generated artefacts ────────────────────────────────────────────
+output/
+!output/.gitkeep
+
+# ── Python byte-code & caches ──────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual envs ───────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Testing / linting ──────────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+*.egg-info/
+
+# ── IDE ────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+.DS_Store
